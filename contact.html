@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Atlas Travel Morocco</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .map-placeholder {
+    width: 100%; height: 300px; background: var(--dune);
+    border-radius: 3px; display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--dune-dk); flex-direction: column; gap: 0.5rem;
+    color: var(--earth-lt); font-size: 0.85rem; margin-top: 2rem;
+  }
+  .map-icon { font-size: 2rem; }
+  .social-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 1.5rem; }
+  .social-card {
+    display: flex; align-items: center; gap: 1rem;
+    border: 1px solid var(--dune-dk); padding: 1rem 1.2rem; border-radius: 3px;
+    transition: background 0.2s, border-color 0.2s; text-decoration: none; color: var(--earth);
+  }
+  .social-card:hover { background: var(--dune); border-color: var(--sand); }
+  .social-card-icon { font-size: 1.4rem; width: 40px; text-align: center; }
+  .social-card-name { font-weight: 500; font-size: 0.88rem; }
+  .social-card-handle { font-size: 0.78rem; color: var(--earth-lt); }
+  .success-msg {
+    display: none; background: #edf7ed; border: 1px solid #a3d9a5;
+    padding: 1rem 1.2rem; border-radius: 3px; font-size: 0.9rem; color: #2d6a30;
+    margin-top: 0.5rem;
+  }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">Atlas <span>Travel</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="itineraries.html">Itineraries</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html" class="nav-cta active">Book a Trip</a></li>
+    <div class="lang-switch">
+      <span class="lang-btn active">EN</span>
+      <span class="lang-btn">DE</span>
+      <span class="lang-btn">FR</span>
+    </div>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=1800&auto=format&fit=crop&q=80')"></div>
+  <div class="hero-overlay"></div>
+  <div style="position:relative;z-index:2;">
+    <div class="eyebrow" style="color:var(--sand-lt);">Let's Talk</div>
+    <h1 style="font-family:var(--ff-head);font-size:clamp(2.4rem,4vw,3.8rem);color:var(--white);">Plan Your Morocco Journey</h1>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- FORM -->
+      <div class="reveal">
+        <div class="eyebrow" style="color:var(--sand-dk);">Send a Message</div>
+        <h2 style="font-family:var(--ff-head);font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:0.6rem;line-height:1.2;">Tell Us About<br>Your Dream Trip</h2>
+        <p style="color:var(--earth-lt);font-size:0.9rem;margin-bottom:2rem;">We reply within 24 hours with a personalised, no-obligation proposal.</p>
+
+        <form class="form-wrap" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" placeholder="Maria" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" placeholder="Müller" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" placeholder="maria@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone / WhatsApp (optional)</label>
+            <input type="tel" placeholder="+49 ...">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Trip Interest</label>
+              <select>
+                <option value="">Choose a trip...</option>
+                <option>Sahara Desert Experience (5 days)</option>
+                <option>High Atlas Trek (7 days)</option>
+                <option>Morocco Classic (10 days)</option>
+                <option>Blue City & North (7 days)</option>
+                <option>Deep Sahara – Erg Chebbi (8 days)</option>
+                <option>Private / Bespoke Tour</option>
+                <option>Not sure yet – need advice</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Month</label>
+              <select>
+                <option value="">Any month...</option>
+                <option>January</option><option>February</option><option>March</option>
+                <option>April</option><option>May</option><option>June</option>
+                <option>July</option><option>August</option><option>September</option>
+                <option>October</option><option>November</option><option>December</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Number of Travellers</label>
+              <select>
+                <option>1 person</option>
+                <option>2 people</option>
+                <option>3–4 people</option>
+                <option>5–8 people</option>
+                <option>9+ people (ask us)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Budget per Person</label>
+              <select>
+                <option>Under €500</option>
+                <option>€500 – €800</option>
+                <option>€800 – €1,200</option>
+                <option>€1,200+</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Message</label>
+            <textarea placeholder="Tell us about your travel dreams — fitness level, special interests, dietary needs, anything else you'd like us to know..."></textarea>
+          </div>
+          <button type="submit" class="btn-send" id="submitBtn">Send Enquiry →</button>
+          <div class="success-msg" id="successMsg">
+            ✓ Your message has been sent! We'll be in touch within 24 hours.
+          </div>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO & SOCIALS -->
+      <div class="reveal delay-1">
+        <div class="contact-info">
+          <h3>We're Here to Help</h3>
+          <p>Whether you have a specific trip in mind or you're still in the dreaming phase — reach out. We love talking about Morocco.</p>
+
+          <div class="c-detail">
+            <div class="c-icon">✉</div>
+            <div>
+              <span class="c-label">Email</span>
+              <a href="mailto:hello@atlas-travel.ma" class="c-val" style="display:block;">hello@atlas-travel.ma</a>
+            </div>
+          </div>
+
+          <div class="c-detail">
+            <div class="c-icon">☎</div>
+            <div>
+              <span class="c-label">Phone (Germany)</span>
+              <a href="tel:+4930123456" class="c-val" style="display:block;">+49 30 123 456 78</a>
+            </div>
+          </div>
+
+          <div class="c-detail">
+            <div class="c-icon">💬</div>
+            <div>
+              <span class="c-label">WhatsApp (Morocco)</span>
+              <a href="https://wa.me/212600000000" class="c-val" style="display:block;">+212 600 000 000</a>
+            </div>
+          </div>
+
+          <div class="c-detail">
+            <div class="c-icon">⏱</div>
+            <div>
+              <span class="c-label">Response Time</span>
+              <span class="c-val">Within 24 hours, usually much faster</span>
+            </div>
+          </div>
+
+          <div class="c-detail">
+            <div class="c-icon">🌍</div>
+            <div>
+              <span class="c-label">Languages</span>
+              <span class="c-val">English · German · French · Arabic · Tamazight</span>
+            </div>
+          </div>
+
+          <!-- SOCIAL MEDIA -->
+          <div style="margin-top:2.5rem;">
+            <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand-dk);margin-bottom:1rem;">Follow Our Adventures</p>
+            <div class="social-grid">
+
+              <a href="https://instagram.com/atlastravelmorocco" class="social-card" target="_blank" rel="noopener">
+                <div class="social-card-icon">📷</div>
+                <div>
+                  <div class="social-card-name">Instagram</div>
+                  <div class="social-card-handle">@atlastravelmorocco</div>
+                </div>
+              </a>
+
+              <a href="https://facebook.com/atlastravelmorocco" class="social-card" target="_blank" rel="noopener">
+                <div class="social-card-icon" style="font-size:1.2rem;font-weight:700;color:#1877F2;">f</div>
+                <div>
+                  <div class="social-card-name">Facebook</div>
+                  <div class="social-card-handle">Atlas Travel Morocco</div>
+                </div>
+              </a>
+
+              <a href="https://wa.me/212600000000" class="social-card" target="_blank" rel="noopener">
+                <div class="social-card-icon">💬</div>
+                <div>
+                  <div class="social-card-name">WhatsApp</div>
+                  <div class="social-card-handle">Chat with us directly</div>
+                </div>
+              </a>
+
+              <a href="https://tiktok.com/@atlastravelmorocco" class="social-card" target="_blank" rel="noopener">
+                <div class="social-card-icon">♪</div>
+                <div>
+                  <div class="social-card-name">TikTok</div>
+                  <div class="social-card-handle">@atlastravelmorocco</div>
+                </div>
+              </a>
+
+              <a href="https://youtube.com/@atlastravelmorocco" class="social-card" target="_blank" rel="noopener">
+                <div class="social-card-icon" style="font-size:1rem;">▶</div>
+                <div>
+                  <div class="social-card-name">YouTube</div>
+                  <div class="social-card-handle">Trip videos & guides</div>
+                </div>
+              </a>
+
+              <a href="https://tripadvisor.com" class="social-card" target="_blank" rel="noopener">
+                <div class="social-card-icon" style="font-size:1rem;">★</div>
+                <div>
+                  <div class="social-card-name">TripAdvisor</div>
+                  <div class="social-card-handle">Read our reviews</div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- MAP PLACEHOLDER -->
+          <div class="map-placeholder">
+            <div class="map-icon">📍</div>
+            <strong style="font-size:0.9rem;color:var(--earth);">Marrakech, Morocco</strong>
+            <span>+ Berlin, Germany office</span>
+            <a href="https://maps.google.com/?q=Marrakech,Morocco" target="_blank" rel="noopener" style="margin-top:0.5rem;font-size:0.8rem;color:var(--sand-dk);border-bottom:1px solid var(--sand);padding-bottom:1px;">Open in Google Maps →</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REASSURANCE STRIP -->
+<section style="background:var(--dune);padding:3rem 5rem;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;" class="reveal">
+      <div>
+        <div style="font-size:1.6rem;margin-bottom:0.5rem;">⚡</div>
+        <h4 style="font-family:var(--ff-head);font-size:1rem;margin-bottom:0.3rem;">Fast Response</h4>
+        <p style="font-size:0.82rem;color:var(--earth-lt);">We reply to every enquiry within 24 hours — usually much faster.</p>
+      </div>
+      <div>
+        <div style="font-size:1.6rem;margin-bottom:0.5rem;">🎯</div>
+        <h4 style="font-family:var(--ff-head);font-size:1rem;margin-bottom:0.3rem;">No Obligation</h4>
+        <p style="font-size:0.82rem;color:var(--earth-lt);">Our first proposal is always free and there's no pressure to book.</p>
+      </div>
+      <div>
+        <div style="font-size:1.6rem;margin-bottom:0.5rem;">🔒</div>
+        <h4 style="font-family:var(--ff-head);font-size:1rem;margin-bottom:0.3rem;">Secure Booking</h4>
+        <p style="font-size:0.82rem;color:var(--earth-lt);">30% deposit to confirm, balance 6 weeks before. Full refund if we cancel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Atlas <span>Travel</span></div>
+        <p class="footer-about">Handcrafted Morocco journeys since 2012. Based between Marrakech and Berlin.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/atlastravelmorocco" title="Instagram">📷</a>
+          <a href="https://facebook.com/atlastravelmorocco" title="Facebook">f</a>
+          <a href="https://wa.me/212600000000" title="WhatsApp">💬</a>
+          <a href="https://tiktok.com/@atlastravelmorocco" title="TikTok">♪</a>
+          <a href="https://youtube.com/@atlastravelmorocco" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="itineraries.html">Itineraries</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul><li><a href="itineraries.html">Sahara Desert</a></li><li><a href="itineraries.html">High Atlas</a></li><li><a href="itineraries.html">Marrakech</a></li><li><a href="itineraries.html">Fès & Meknes</a></li><li><a href="itineraries.html">Chefchaouen</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@atlas-travel.ma">hello@atlas-travel.ma</a></li><li><a href="tel:+4930123456">+49 30 123 456 78</a></li><li><a href="https://wa.me/212600000000">WhatsApp Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Atlas Travel Morocco. All rights reserved.</span><span>Made with ♥ for Morocco</span></div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+  setTimeout(() => {
+    btn.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }, 1000);
+}
+</script>
+</body>
+</html>

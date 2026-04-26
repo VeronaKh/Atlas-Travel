@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ – Atlas Travel Morocco</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">Atlas <span>Travel</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="itineraries.html">Itineraries</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="contact.html" class="nav-cta">Book a Trip</a></li>
+    <div class="lang-switch">
+      <span class="lang-btn active">EN</span>
+      <span class="lang-btn">DE</span>
+      <span class="lang-btn">FR</span>
+    </div>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1553702153-79b3d21a8a75?w=1800&auto=format&fit=crop&q=80')"></div>
+  <div class="hero-overlay"></div>
+  <div style="position:relative;z-index:2;">
+    <div class="eyebrow" style="color:var(--sand-lt);">Everything You Need to Know</div>
+    <h1 style="font-family:var(--ff-head);font-size:clamp(2.4rem,4vw,3.8rem);color:var(--white);">Frequently Asked Questions</h1>
+  </div>
+</div>
+
+<!-- FAQ CATEGORIES -->
+<section class="section bg-white">
+  <div class="container">
+
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;">
+
+      <!-- Sidebar nav -->
+      <div class="reveal" style="position:sticky;top:90px;">
+        <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand-dk);margin-bottom:1rem;">Categories</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.3rem;">
+          <li><a href="#planning" style="font-size:0.9rem;color:var(--earth-lt);padding:0.4rem 0.8rem;display:block;border-radius:2px;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='var(--dune)'" onmouseout="this.style.background='transparent'">Planning Your Trip</a></li>
+          <li><a href="#practical" style="font-size:0.9rem;color:var(--earth-lt);padding:0.4rem 0.8rem;display:block;border-radius:2px;transition:background 0.2s;" onmouseover="this.style.background='var(--dune)'" onmouseout="this.style.background='transparent'">Practical Info</a></li>
+          <li><a href="#sahara" style="font-size:0.9rem;color:var(--earth-lt);padding:0.4rem 0.8rem;display:block;border-radius:2px;transition:background 0.2s;" onmouseover="this.style.background='var(--dune)'" onmouseout="this.style.background='transparent'">Sahara & Desert</a></li>
+          <li><a href="#atlas" style="font-size:0.9rem;color:var(--earth-lt);padding:0.4rem 0.8rem;display:block;border-radius:2px;transition:background 0.2s;" onmouseover="this.style.background='var(--dune)'" onmouseout="this.style.background='transparent'">Atlas Trekking</a></li>
+          <li><a href="#booking" style="font-size:0.9rem;color:var(--earth-lt);padding:0.4rem 0.8rem;display:block;border-radius:2px;transition:background 0.2s;" onmouseover="this.style.background='var(--dune)'" onmouseout="this.style.background='transparent'">Booking & Payment</a></li>
+        </ul>
+        <div style="margin-top:2.5rem;padding:1.4rem;background:var(--dune);border-radius:3px;">
+          <p style="font-size:0.85rem;font-weight:500;margin-bottom:0.5rem;">Still have questions?</p>
+          <p style="font-size:0.8rem;color:var(--earth-lt);margin-bottom:1rem;">We're happy to chat. Send us a message and we'll reply within 24 hours.</p>
+          <a href="contact.html" class="btn-primary" style="background:var(--earth);color:var(--white);font-size:0.75rem;padding:0.6rem 1.2rem;">Ask Us Directly</a>
+        </div>
+      </div>
+
+      <!-- FAQ content -->
+      <div class="reveal delay-1">
+
+        <h2 id="planning" style="font-family:var(--ff-head);font-size:1.4rem;margin-bottom:1.5rem;padding-top:0.5rem;">Planning Your Trip</h2>
+        <div class="faq-wrap" style="max-width:100%;">
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Do I need a visa to visit Morocco?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Citizens of the EU (Germany, Austria, Switzerland, France, etc.), UK, USA, Canada and many other countries do not need a visa for stays up to 90 days. A valid passport is sufficient. We always send you a current entry requirements update before your trip. If you're from a country that does require a visa, we can advise you on the process.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">When is the best time to visit Morocco?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>The most pleasant months are March–May and September–November. Temperatures are warm but manageable, wildflowers bloom in the valleys, and the light is extraordinary. Summer (June–August) is very hot in the Sahara — up to 48°C — and not ideal for desert trips. Winter is beautiful in the north and cities, but mountain treks may be affected by snow above 2500 m.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Can I customise my itinerary?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Absolutely — that's our default. Our published itineraries are starting points, not fixed programmes. We build every trip around your interests, fitness level, travel pace and budget. Want more time in Fès and less driving? More trekking days? A cooking class in Marrakech? Just tell us and we'll make it happen.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">How big are the groups?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>We cap all group trips at 8 people. This keeps the experience personal, allows us to stay in smaller, more authentic accommodation, and reduces our environmental footprint. Private trips for individuals, couples and families are also available — these are fully private with a dedicated guide.</p></div>
+          </div>
+
+        </div>
+
+        <h2 id="practical" style="font-family:var(--ff-head);font-size:1.4rem;margin:2.5rem 0 1.5rem;">Practical Information</h2>
+        <div class="faq-wrap" style="max-width:100%;">
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What currency is used in Morocco?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>The Moroccan Dirham (MAD). It's not freely convertible outside Morocco, so exchange money on arrival. ATMs are widely available in cities. In the Sahara and small mountain villages, cash is essential — card payments are rare. We recommend bringing €200–300 in cash for personal spending on a 7-day trip.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Is Morocco safe for solo travellers and women?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Morocco is generally a safe travel destination. Millions of tourists — including many solo women — visit every year without issue. As in any destination, normal city awareness applies: watch your belongings in busy souks, use registered taxis, and dress modestly in rural areas. All our guides are vetted and experienced, and we're reachable by phone 24/7 during your trip.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What vaccinations do I need?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>No mandatory vaccinations are required for most nationalities. We recommend ensuring your routine vaccinations are up to date (tetanus, hepatitis A). Consult your doctor or a travel clinic 4–6 weeks before departure for personalised advice. We also recommend travel insurance that covers medical evacuation.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What languages are spoken in Morocco?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Morocco has four main languages: Darija (Moroccan Arabic), Tamazight (Berber), French and Spanish (in the north). Our guides speak English, German, French and Arabic. In tourist areas, English is widely understood. Our team communicates in English, German and French.</p></div>
+          </div>
+
+        </div>
+
+        <h2 id="sahara" style="font-family:var(--ff-head);font-size:1.4rem;margin:2.5rem 0 1.5rem;">Sahara & Desert Trips</h2>
+        <div class="faq-wrap" style="max-width:100%;">
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What is sleeping in the Sahara actually like?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>It's magical. Our desert camp near Merzouga has traditional Berber-style tents with proper beds, blankets and lanterns — not just a sleeping bag on sand. Evenings involve dinner around a campfire, Berber drumming, and an astonishing sky full of stars with zero light pollution. Mornings start with sunrise on the dunes — one of the most beautiful sights on Earth.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">How fit do I need to be for the camel trek?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Very little fitness is required. The camel ride to the camp is typically 45–90 minutes and is manageable for almost everyone. Camels are gentle and our handlers walk alongside. If you prefer, you can drive to the camp and just ride the camels for a short sunset photo ride instead.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What should I pack for the desert?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Essentials: high-factor sunscreen, a hat, sunglasses, a light scarf (for wind and sand), comfortable walking shoes, and layers for the cold nights — even in summer, desert temperatures drop dramatically after sunset. We provide a full packing list when you confirm your trip.</p></div>
+          </div>
+
+        </div>
+
+        <h2 id="atlas" style="font-family:var(--ff-head);font-size:1.4rem;margin:2.5rem 0 1.5rem;">Atlas Mountain Trekking</h2>
+        <div class="faq-wrap" style="max-width:100%;">
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">How difficult are the Atlas treks?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>We offer treks for all levels. Our introductory routes (Imlil Valley, Ourika Valley) are suitable for reasonably fit beginners — 3–5 hours walking per day on well-marked paths. Our Toubkal approach and multi-day routes are more demanding and require prior hiking experience and good physical fitness. We always match the route to your group's level.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Where do we sleep during a trek?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>On most treks we stay in Berber family gîtes (mountain guest houses) — simple, clean rooms with home-cooked meals. This is one of the highlights of Atlas trekking: eating tagine at a family table, learning a few words of Tamazight, and experiencing the genuine warmth of mountain hospitality. On the Toubkal summit approach, we use a mountain refuge.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Do I need special equipment for the treks?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Good walking boots are essential — no trainers. A daypack, trekking poles (we can lend these), waterproof jacket, sun protection and warm layers for evenings. Mules carry the main luggage between stages, so you only carry a light daypack on the trail. A full equipment list is sent on booking.</p></div>
+          </div>
+
+        </div>
+
+        <h2 id="booking" style="font-family:var(--ff-head);font-size:1.4rem;margin:2.5rem 0 1.5rem;">Booking & Payment</h2>
+        <div class="faq-wrap" style="max-width:100%;">
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What is included in the price?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>All our prices include: accommodation (riads or Berber camp), professional English-speaking guide, private transport during the trip, all activities listed in the itinerary, and daily breakfast. Lunches and dinners are included on trekking and desert trips. International flights are not included, but we're happy to advise on the best routes and times.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">How do I book and what deposit is required?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Send us an enquiry via the contact page or by email. We'll send a personalised proposal within 24 hours. To confirm a booking we require a 30% deposit, with the balance due 6 weeks before departure. We accept bank transfer, PayPal and major credit cards.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What is the cancellation policy?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Cancellations more than 60 days before departure: full refund minus a €50 admin fee. 30–60 days: 50% refund. Less than 30 days: no refund. We strongly recommend taking out travel insurance that covers trip cancellation — we can suggest providers. In the rare case we must cancel a trip due to safety reasons, you receive a full refund.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Do you offer travel insurance?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>We don't sell insurance directly, but we strongly recommend it for all our trips. A good policy should cover: trip cancellation, medical expenses, and emergency evacuation. We recommend checking providers like World Nomads, Allianz Travel or your own bank's travel coverage. Ask us and we'll point you to what other travellers have used.</p></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--earth);padding:5rem;text-align:center;">
+  <div class="container reveal">
+    <div class="eyebrow" style="color:var(--sand);justify-content:center;">Still Curious?</div>
+    <h2 style="font-family:var(--ff-head);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--white);margin-bottom:1rem;">We're Happy to Chat</h2>
+    <p style="color:rgba(253,250,245,0.65);max-width:480px;margin:0 auto 2rem;">No question is too small. Send us a message and we'll get back to you within 24 hours.</p>
+    <a href="contact.html" class="btn-primary">Get in Touch</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Atlas <span>Travel</span></div>
+        <p class="footer-about">Handcrafted Morocco journeys since 2012.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com" title="Instagram">📷</a>
+          <a href="https://facebook.com" title="Facebook">f</a>
+          <a href="https://wa.me/212600000000" title="WhatsApp">💬</a>
+          <a href="https://tiktok.com" title="TikTok">♪</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="itineraries.html">Itineraries</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul><li><a href="itineraries.html">Sahara Desert</a></li><li><a href="itineraries.html">High Atlas</a></li><li><a href="itineraries.html">Marrakech</a></li><li><a href="itineraries.html">Chefchaouen</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@atlas-travel.ma">hello@atlas-travel.ma</a></li><li><a href="tel:+4930123456">+49 30 12345678</a></li><li><a href="#">WhatsApp Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Atlas Travel Morocco. All rights reserved.</span><span>Made with ♥ for Morocco</span></div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

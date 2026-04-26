@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itineraries – Atlas Travel Morocco</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">Atlas <span>Travel</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="itineraries.html" class="active">Itineraries</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html" class="nav-cta">Book a Trip</a></li>
+    <div class="lang-switch">
+      <span class="lang-btn active">EN</span>
+      <span class="lang-btn">DE</span>
+      <span class="lang-btn">FR</span>
+    </div>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1548786811-dd6e453ccca7?w=1800&auto=format&fit=crop&q=80')"></div>
+  <div class="hero-overlay"></div>
+  <div style="position:relative;z-index:2;">
+    <div class="eyebrow" style="color:var(--sand-lt);">Explore Morocco</div>
+    <h1 style="font-family:var(--ff-head);font-size:clamp(2.4rem,4vw,3.8rem);color:var(--white);">Our Itineraries</h1>
+  </div>
+</div>
+
+<!-- FILTER TABS -->
+<section class="section bg-white" style="padding-top:3rem;padding-bottom:1rem;">
+  <div class="container">
+    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;" id="filterBar">
+      <button class="filter-btn active" onclick="filterTrips('all',this)">All Trips</button>
+      <button class="filter-btn" onclick="filterTrips('sahara',this)">Sahara</button>
+      <button class="filter-btn" onclick="filterTrips('atlas',this)">Atlas Mountains</button>
+      <button class="filter-btn" onclick="filterTrips('culture',this)">Culture & Cities</button>
+      <button class="filter-btn" onclick="filterTrips('private',this)">Private Tours</button>
+    </div>
+  </div>
+</section>
+
+<style>
+.filter-btn {
+  padding:0.5rem 1.2rem; background:var(--dune); border:1px solid var(--dune-dk);
+  border-radius:2px; font-family:var(--ff-body); font-size:0.78rem; font-weight:500;
+  letter-spacing:0.08em; text-transform:uppercase; color:var(--earth-lt); cursor:pointer;
+  transition:all 0.2s;
+}
+.filter-btn.active,.filter-btn:hover { background:var(--earth); color:var(--white); border-color:var(--earth); }
+.trip-card[data-cat] { transition: opacity 0.3s, transform 0.3s; }
+.trip-card.hidden { opacity:0; pointer-events:none; transform:scale(0.97); }
+</style>
+
+<!-- ALL TRIPS -->
+<section class="section bg-white" style="padding-top:2rem;">
+  <div class="container">
+    <div class="trips-grid" id="tripsGrid">
+
+      <div class="trip-card reveal" data-cat="sahara">
+        <div class="trip-img-wrap"><img class="trip-img" src="https://images.unsplash.com/photo-1548786811-dd6e453ccca7?w=700&auto=format&fit=crop" alt="Sahara Merzouga"></div>
+        <div class="trip-body">
+          <span class="trip-badge">Sahara · Bestseller</span>
+          <h3 class="trip-name">Sahara Desert Experience</h3>
+          <p class="trip-desc">Camel trek at sunset, sleep in a luxury Berber camp under millions of stars. Includes Dades Gorge and Todra Canyon.</p>
+          <div class="trip-footer"><div><div class="trip-price">from €490</div><div class="trip-days">5 days · Marrakech–Marrakech</div></div><a href="#itin-sahara" class="trip-cta">View Route →</a></div>
+        </div>
+      </div>
+
+      <div class="trip-card reveal delay-1" data-cat="atlas">
+        <div class="trip-img-wrap"><img class="trip-img" src="https://images.unsplash.com/photo-1580502304784-8985b7eb7260?w=700&auto=format&fit=crop" alt="Atlas Trek"></div>
+        <div class="trip-body">
+          <span class="trip-badge">Atlas · Trekking</span>
+          <h3 class="trip-name">High Atlas Trek</h3>
+          <p class="trip-desc">Traverse mountain passes, stay in Berber homes, and breathe the thin air above 3000 m near Toubkal.</p>
+          <div class="trip-footer"><div><div class="trip-price">from €620</div><div class="trip-days">7 days · Marrakech base</div></div><a href="#itin-atlas" class="trip-cta">View Route →</a></div>
+        </div>
+      </div>
+
+      <div class="trip-card reveal delay-2" data-cat="culture">
+        <div class="trip-img-wrap"><img class="trip-img" src="https://images.unsplash.com/photo-1597212720453-7c0f2b5c8a87?w=700&auto=format&fit=crop" alt="Marrakech"></div>
+        <div class="trip-body">
+          <span class="trip-badge">Culture · Round Trip</span>
+          <h3 class="trip-name">Morocco Classic</h3>
+          <p class="trip-desc">Marrakech, Fès, Chefchaouen and the Sahara — the imperial cities plus desert in one journey.</p>
+          <div class="trip-footer"><div><div class="trip-price">from €890</div><div class="trip-days">10 days · Full loop</div></div><a href="#itin-classic" class="trip-cta">View Route →</a></div>
+        </div>
+      </div>
+
+      <div class="trip-card reveal" data-cat="culture">
+        <div class="trip-img-wrap"><img class="trip-img" src="https://images.unsplash.com/photo-1553702153-79b3d21a8a75?w=700&auto=format&fit=crop" alt="Chefchaouen"></div>
+        <div class="trip-body">
+          <span class="trip-badge">Culture · North</span>
+          <h3 class="trip-name">Blue City & North Coast</h3>
+          <p class="trip-desc">Casablanca, Rabat, Fès, the blue alleys of Chefchaouen and the Roman ruins of Volubilis.</p>
+          <div class="trip-footer"><div><div class="trip-price">from €730</div><div class="trip-days">7 days · Northern loop</div></div><a href="#itin-north" class="trip-cta">View Route →</a></div>
+        </div>
+      </div>
+
+      <div class="trip-card reveal delay-1" data-cat="sahara">
+        <div class="trip-img-wrap"><img class="trip-img" src="https://images.unsplash.com/photo-1548105506-f8e4eecb63bf?w=700&auto=format&fit=crop" alt="Erg Chebbi"></div>
+        <div class="trip-body">
+          <span class="trip-badge">Sahara · Extended</span>
+          <h3 class="trip-name">Deep Sahara — Erg Chebbi</h3>
+          <p class="trip-desc">3 nights in the desert. Sunrise dune walks, fossil markets, oasis villages and total silence.</p>
+          <div class="trip-footer"><div><div class="trip-price">from €780</div><div class="trip-days">8 days · Desert focus</div></div><a href="contact.html" class="trip-cta">Enquire →</a></div>
+        </div>
+      </div>
+
+      <div class="trip-card reveal delay-2" data-cat="private">
+        <div class="trip-img-wrap"><img class="trip-img" src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=700&auto=format&fit=crop" alt="Private Tour"></div>
+        <div class="trip-body">
+          <span class="trip-badge">Private · Bespoke</span>
+          <h3 class="trip-name">Tailored Private Tour</h3>
+          <p class="trip-desc">Tell us your dream and we build it. Private driver, exclusive riads, your own pace, your own route.</p>
+          <div class="trip-footer"><div><div class="trip-price">on request</div><div class="trip-days">Any duration</div></div><a href="contact.html" class="trip-cta">Start Planning →</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DETAILED ITINERARIES -->
+<section class="section bg-dune" id="itin-sahara">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Day by Day</div>
+      <h2>Detailed Routes</h2>
+      <p>Every route is a starting point — we customise each one for you.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
+
+      <div class="itin-block reveal" id="itin-sahara">
+        <h3 class="itin-title">Sahara Desert Experience</h3>
+        <p class="itin-meta">5 days · From Marrakech · From €490</p>
+        <ul class="day-list">
+          <li class="day-row"><span class="day-num">Day 1</span><div class="day-info"><strong>Arrival in Marrakech</strong><span>Check in to your riad, evening walk through Djemaa el-Fna square</span></div></li>
+          <li class="day-row"><span class="day-num">Day 2</span><div class="day-info"><strong>Marrakech → Ouarzazate</strong><span>Tizi n'Tichka mountain pass, Aït-Ben-Haddou UNESCO Kasbah</span></div></li>
+          <li class="day-row"><span class="day-num">Day 3</span><div class="day-info"><strong>Dades & Todra Gorge</strong><span>Rose Valley, dramatic canyon walls, Berber village lunch</span></div></li>
+          <li class="day-row"><span class="day-num">Day 4</span><div class="day-info"><strong>Merzouga — The Sahara</strong><span>Camel trek at sunset, Berber music around campfire, sleeping under stars</span></div></li>
+          <li class="day-row"><span class="day-num">Day 5</span><div class="day-info"><strong>Sunrise & Return</strong><span>Dawn dune walk, breakfast in camp, scenic drive back to Marrakech</span></div></li>
+        </ul>
+        <a href="contact.html" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Book This Trip</a>
+      </div>
+
+      <div class="itin-block reveal delay-1" id="itin-atlas">
+        <h3 class="itin-title">High Atlas Trek</h3>
+        <p class="itin-meta">7 days · From Marrakech · From €620</p>
+        <ul class="day-list">
+          <li class="day-row"><span class="day-num">Day 1</span><div class="day-info"><strong>Marrakech Arrival</strong><span>Meet your guide, equipment check, medina dinner</span></div></li>
+          <li class="day-row"><span class="day-num">Day 2</span><div class="day-info"><strong>Imlil Village</strong><span>Drive to Imlil (1740m), acclimatisation walk, stay with local family</span></div></li>
+          <li class="day-row"><span class="day-num">Day 3</span><div class="day-info"><strong>Tizi n'Mzik Pass</strong><span>Trek to 2489m, panoramic Atlas views, descent to Azzaden Valley</span></div></li>
+          <li class="day-row"><span class="day-num">Day 4</span><div class="day-info"><strong>Azzaden Trek</strong><span>Remote valley, walnut groves, traditional Berber gîte overnight</span></div></li>
+          <li class="day-row"><span class="day-num">Day 5</span><div class="day-info"><strong>Tacheddirt → Setti Fatma</strong><span>Ridge walk with Atlas views, waterfall hike in afternoon</span></div></li>
+          <li class="day-row"><span class="day-num">Day 6</span><div class="day-info"><strong>Ourika Valley</strong><span>Market day in a Berber souk, traditional mint tea ceremony</span></div></li>
+          <li class="day-row"><span class="day-num">Day 7</span><div class="day-info"><strong>Return Marrakech</strong><span>Morning free, afternoon hammam, farewell dinner</span></div></li>
+        </ul>
+        <a href="contact.html" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Book This Trip</a>
+      </div>
+
+      <div class="itin-block reveal" id="itin-classic">
+        <h3 class="itin-title">Morocco Classic</h3>
+        <p class="itin-meta">10 days · Full Loop · From €890</p>
+        <ul class="day-list">
+          <li class="day-row"><span class="day-num">1–2</span><div class="day-info"><strong>Marrakech</strong><span>Medina, Majorelle Garden, souks, Djemaa el-Fna</span></div></li>
+          <li class="day-row"><span class="day-num">3</span><div class="day-info"><strong>Atlas & Ouarzazate</strong><span>Tizi n'Tichka, Aït-Ben-Haddou Kasbah</span></div></li>
+          <li class="day-row"><span class="day-num">4–5</span><div class="day-info"><strong>Sahara — Merzouga</strong><span>Dunes, camel ride, Berber camp overnight</span></div></li>
+          <li class="day-row"><span class="day-num">6</span><div class="day-info"><strong>Ziz Valley → Fès</strong><span>Oasis palmeries, cedar forest, Midelt</span></div></li>
+          <li class="day-row"><span class="day-num">7–8</span><div class="day-info"><strong>Fès</strong><span>Medina walk, tanneries, Bou Inania Madrasa</span></div></li>
+          <li class="day-row"><span class="day-num">9</span><div class="day-info"><strong>Chefchaouen</strong><span>Blue city afternoon and overnight</span></div></li>
+          <li class="day-row"><span class="day-num">10</span><div class="day-info"><strong>Return</strong><span>Rabat or Casablanca for departure</span></div></li>
+        </ul>
+        <a href="contact.html" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Book This Trip</a>
+      </div>
+
+      <div class="itin-block reveal delay-1" id="itin-north">
+        <h3 class="itin-title">Blue City & North</h3>
+        <p class="itin-meta">7 days · Northern Loop · From €730</p>
+        <ul class="day-list">
+          <li class="day-row"><span class="day-num">Day 1</span><div class="day-info"><strong>Casablanca</strong><span>Hassan II Mosque, Art Deco architecture, Corniche seafront</span></div></li>
+          <li class="day-row"><span class="day-num">Day 2</span><div class="day-info"><strong>Rabat</strong><span>Royal Palace, Kasbah of the Udayas, UNESCO medina</span></div></li>
+          <li class="day-row"><span class="day-num">Day 3</span><div class="day-info"><strong>Fès</strong><span>Medieval medina, Chouara tannery, Al-Qarawiyyin</span></div></li>
+          <li class="day-row"><span class="day-num">Day 4</span><div class="day-info"><strong>Chefchaouen</strong><span>Blue streets, Rif Mountains backdrop, artisan souks</span></div></li>
+          <li class="day-row"><span class="day-num">Day 5</span><div class="day-info"><strong>Nature Day</strong><span>Talassemtane National Park, cedar forests, Barbary macaques</span></div></li>
+          <li class="day-row"><span class="day-num">Day 6</span><div class="day-info"><strong>Meknès & Volubilis</strong><span>Roman ruins UNESCO site, Bab Mansour gate</span></div></li>
+          <li class="day-row"><span class="day-num">Day 7</span><div class="day-info"><strong>Return</strong><span>Back to Casablanca or Rabat for departure</span></div></li>
+        </ul>
+        <a href="contact.html" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Book This Trip</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Atlas <span>Travel</span></div>
+        <p class="footer-about">Handcrafted Morocco journeys since 2012.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com" title="Instagram">📷</a>
+          <a href="https://facebook.com" title="Facebook">f</a>
+          <a href="https://wa.me/212600000000" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="itineraries.html">Itineraries</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Trips</h4><ul><li><a href="#">Sahara Desert</a></li><li><a href="#">High Atlas Trek</a></li><li><a href="#">Morocco Classic</a></li><li><a href="#">Blue City</a></li><li><a href="#">Private Tours</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@atlas-travel.ma">hello@atlas-travel.ma</a></li><li><a href="tel:+4930123456">+49 30 12345678</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Atlas Travel Morocco.</span><span>Made with ♥ for Morocco</span></div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+function filterTrips(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#tripsGrid .trip-card').forEach(card => {
+    card.classList.toggle('hidden', cat !== 'all' && card.dataset.cat !== cat);
+  });
+}
+</script>
+</body>
+</html>
